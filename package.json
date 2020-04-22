@@ -1,0 +1,49 @@
+{
+  "name": "cb-toolset",
+  "version": "0.0.1",
+  "description": "Common tiny reusable snippets and types",
+  "author": "Hien CB",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/ICodeMyOwnLife/cb-toolset.git"
+  },
+  "license": "MIT",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "module": "dist/index.m.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "microbundle",
+    "commit": "git-cz",
+    "dev": "microbundle watch",
+    "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint:fix": "yarn lint --fix",
+    "prebuild": "del dist",
+    "release": "release-it",
+    "size": "size-limit",
+    "test": "jest",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@size-limit/preset-big-lib": "^4.4.5",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.11.1",
+    "commitizen": "^4.0.4",
+    "cz-conventional-changelog": "3.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-generic-ts": "^2.0.1",
+    "husky": "^4.2.5",
+    "jest": "^25.3.0",
+    "lint-staged": "^10.1.4",
+    "release-it": "^13.5.4",
+    "rollup": "^2.6.1",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "ts-jest": "^25.4.0",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3"
+  }
+}

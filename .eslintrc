@@ -1,0 +1,4 @@
+{
+  "extends": "generic-ts",
+  "rules": { "@typescript-eslint/no-use-before-define": "off" }
+}
