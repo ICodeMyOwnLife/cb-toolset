@@ -1,0 +1,13 @@
+{
+  "git": {
+    "commitMessage": "chore(release): release ${version}"
+  },
+  "github": {
+    "release": true,
+    "skipChecks": true
+  },
+  "npm": {
+    "publish": true,
+    "skipChecks": true
+  }
+}

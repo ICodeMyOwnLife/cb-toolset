@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
     "target": "ES2018",
-    "module": "commonjs",
+    "module": "ESNext",
     "lib": ["DOM", "ES2020"],
     "declaration": true,
     "sourceMap": true,
     "outDir": "./dist",
     "noEmit": true,
-    "importHelpers": true,
     "downlevelIteration": true,
     "strict": true,
     "noImplicitAny": true,
