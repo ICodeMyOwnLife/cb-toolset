@@ -19,10 +19,10 @@ const plugins = [
 const watch = {
   include: ['src/**'],
 };
-const buildEsOptions = name => ({
-  input: `src/${name}/index.ts`,
+const buildEsOptions = entryName => ({
+  input: `src/${entryName}/index.ts`,
   output: {
-    file: `dist/${name}.es.js`,
+    file: `dist/${entryName}.es.js`,
     format: 'es',
   },
   plugins,

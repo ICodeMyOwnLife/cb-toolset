@@ -22,10 +22,10 @@ const watch: WatcherOptions = {
   include: ['src/**'],
 };
 
-const buildEsOptions = (name: string): RollupOptions => ({
-  input: `src/${name}/index.ts`,
+const buildEsOptions = (entryName: string): RollupOptions => ({
+  input: `src/${entryName}/index.ts`,
   output: {
-    file: `dist/${name}.es.js`,
+    file: `dist/${entryName}.es.js`,
     format: 'es',
   },
   plugins,
