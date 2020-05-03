@@ -5,7 +5,7 @@
     "lib": ["DOM", "ES2020"],
     "declaration": true,
     "sourceMap": true,
-    "outDir": "./dist",
+    "outDir": ".",
     "noEmit": true,
     "downlevelIteration": true,
     "strict": true,
@@ -23,5 +23,6 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/"]
+  "include": ["src/"],
+  "exclude": ["src/**/*.test.ts"]
 }

@@ -1,6 +1,6 @@
 [
   {
-    "path": "dist/*.js",
+    "path": "./*.es.js",
     "limit": "6 kb"
   }
 ]

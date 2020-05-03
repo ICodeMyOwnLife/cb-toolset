@@ -15,5 +15,8 @@
     "javascriptreact",
     "typescript",
     "typescriptreact"
+  ],
+  "cSpell.words": [
+    "filesize"
   ]
 }
