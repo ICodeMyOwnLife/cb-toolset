@@ -1,6 +1,6 @@
 [
   {
-    "path": "./*.es.js",
+    "path": "./*.mjs",
     "limit": "6 kb"
   }
 ]
