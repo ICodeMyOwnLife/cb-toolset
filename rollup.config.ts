@@ -28,7 +28,7 @@ const watch: WatcherOptions = {
 };
 const inputFilename = (entryName: string) => `src/${entryName}/index.ts`;
 const outputDir = (entryName: string) => `${entryName}/`;
-const outputFilename = (entryName: string) => `${entryName}.es.js`;
+const outputFilename = (entryName: string) => `${entryName}.mjs`;
 
 const buildEsOptions = (entryName: string): RollupOptions => ({
   input: inputFilename(entryName),

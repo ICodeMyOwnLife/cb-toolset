@@ -26,7 +26,7 @@ const watch = {
 };
 const inputFilename = (entryName) => `src/${entryName}/index.ts`;
 const outputDir = (entryName) => `${entryName}/`;
-const outputFilename = (entryName) => `${entryName}.es.js`;
+const outputFilename = (entryName) => `${entryName}.mjs`;
 const buildEsOptions = (entryName) => ({
     input: inputFilename(entryName),
     output: {
