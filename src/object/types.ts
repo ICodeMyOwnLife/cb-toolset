@@ -1,3 +1,7 @@
+export type CreateRecordOf<TValue> = <TKey extends keyof any>(
+  record: Record<TKey, TValue>,
+) => Record<TKey, TValue>;
+
 /**
  * @see https://github.com/react-hook-form/react-hook-form/blob/master/src/types.ts
  */

@@ -1,4 +1,4 @@
-import { ValueOf, PickFrom, OmitFrom } from './types';
+import { ValueOf, PickFrom, OmitFrom, CreateRecordOf } from './types';
 
 export * from './types';
 
@@ -50,6 +50,8 @@ export const pickFrom = <TObject, TKey extends keyof TObject>(
   filterObject<TObject, PickFrom<TObject, TKey>>(o, (_, key) =>
     keys.includes(key as any),
   );
+
+export const recordCreator = <TValue>(): CreateRecordOf<TValue> => a => a;
 
 export const typeOf = (u: any) => {
   const rawType = typeof u;

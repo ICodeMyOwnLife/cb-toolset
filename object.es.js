@@ -9,6 +9,7 @@ const isObject = (u) => typeof u === 'object' && u !== null;
 const isPlainObject = (u) => isObject(u) && u.constructor === Object;
 const omitFrom = (o, ...keys) => filterObject(o, (_, key) => !keys.includes(key));
 const pickFrom = (o, ...keys) => filterObject(o, (_, key) => keys.includes(key));
+const recordCreator = () => a => a;
 const typeOf = (u) => {
     const rawType = typeof u;
     if (rawType !== 'object' || u === null)
@@ -16,4 +17,4 @@ const typeOf = (u) => {
     return Object.getPrototypeOf(u).constructor.name;
 };
 
-export { createUniqueObject, filerNullValue, filterObject, hasOwnProperty, isObject, isPlainObject, omitFrom, pickFrom, typeOf };
+export { createUniqueObject, filerNullValue, filterObject, hasOwnProperty, isObject, isPlainObject, omitFrom, pickFrom, recordCreator, typeOf };

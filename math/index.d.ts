@@ -6,18 +6,9 @@
  * clamp(32, 20, 30) // 30
  * @see https://www.trysmudford.com/blog/linear-interpolation-functions/
  */
-export declare const clamp: (
-  value: number,
-  min?: number,
-  max?: number,
-) => number;
+export declare const clamp: (value: number, min?: number, max?: number) => number;
 export declare const degreeToRadian: (degree: number) => number;
-export declare const distance: (
-  x1: number,
-  y1: number,
-  x2: number,
-  y2: number,
-) => number;
+export declare const distance: (x1: number, y1: number, x2: number, y2: number) => number;
 /**
  * Returns the fraction, based on a value between min and max
  * @example
@@ -26,11 +17,7 @@ export declare const distance: (
  * invlerp(50, 100, 125) // 1
  * @see https://www.trysmudford.com/blog/linear-interpolation-functions/
  */
-export declare const invlerp: (
-  min: number,
-  max: number,
-  value: number,
-) => number;
+export declare const invlerp: (min: number, max: number, value: number) => number;
 /**
  * Returns the value between min and max at a specified fraction
  * @example
@@ -39,11 +26,7 @@ export declare const invlerp: (
  * lerp(20, 80, 0.5) // 40
  * @see https://www.trysmudford.com/blog/linear-interpolation-functions/
  */
-export declare const lerp: (
-  min: number,
-  max: number,
-  fraction: number,
-) => number;
+export declare const lerp: (min: number, max: number, fraction: number) => number;
 export declare const radianToDegree: (radian: number) => number;
 export declare const random: (min: number, max: number) => number;
 /**
@@ -52,10 +35,4 @@ export declare const random: (min: number, max: number) => number;
  * range(10, 100, 2000, 20000, 50) // 10000
  * @see https://www.trysmudford.com/blog/linear-interpolation-functions/
  */
-export declare const range: (
-  min1: number,
-  max1: number,
-  min2: number,
-  max2: number,
-  value1: number,
-) => number;
+export declare const range: (min1: number, max1: number, min2: number, max2: number, value1: number) => number;

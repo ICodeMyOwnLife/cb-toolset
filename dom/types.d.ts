@@ -1,15 +1,13 @@
 export declare type CheckedTargetEvent = TargetEvent<{
-  checked: boolean;
+    checked: boolean;
 }>;
 export declare type FilesTargetEvent = TargetEvent<{
-  files: FileList | null;
+    files: FileList | null;
 }>;
 export interface TargetEvent<TTarget> {
-  target: TTarget;
+    target: TTarget;
 }
 export declare type ValueTargetEvent<TValue = any> = TargetEvent<{
-  value: TValue;
+    value: TValue;
 }>;
-export declare type ValueTargetEventHandler<TValue = any> = (
-  e: ValueTargetEvent<TValue>,
-) => void;
+export declare type ValueTargetEventHandler<TValue = any> = (e: ValueTargetEvent<TValue>) => void;

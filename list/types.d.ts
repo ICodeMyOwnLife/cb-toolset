@@ -1,9 +1,7 @@
 /**
  * @see https://github.com/pirix-gh/ts-toolbelt/tree/master/src/List
  */
-export declare type First<TList extends List> = TList['length'] extends 0
-  ? never
-  : TList[0];
+export declare type First<TList extends List> = TList['length'] extends 0 ? never : TList[0];
 /**
  * @see https://github.com/pirix-gh/ts-toolbelt/tree/master/src/List
  */
@@ -16,8 +14,4 @@ export declare type List<T = any> = readonly T[];
 /**
  * @see https://github.com/pirix-gh/ts-toolbelt/tree/master/src/List
  */
-export declare type Remaining<TList extends List> = ((
-  ...args: TList
-) => any) extends (first: any, ...remaining: infer TRemaining) => any
-  ? TRemaining
-  : never;
+export declare type Remaining<TList extends List> = ((...args: TList) => any) extends (first: any, ...remaining: infer TRemaining) => any ? TRemaining : never;

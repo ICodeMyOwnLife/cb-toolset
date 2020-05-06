@@ -3,3 +3,6 @@ build
 dist
 res
 coverage
+**/*.js
+**/*.d.ts
+!src/**.d.ts
