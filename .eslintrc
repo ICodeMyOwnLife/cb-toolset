@@ -1,5 +1,5 @@
 {
   "extends": "generic-ts",
-  "ignorePatterns": ["*.js", "**/*.d.ts", "!src/**.d.ts"],
+  "ignorePatterns": ["*.mjs", "**/*.d.ts", "!src/**.d.ts"],
   "rules": { "@typescript-eslint/no-use-before-define": "off" }
 }
