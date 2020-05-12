@@ -1,6 +1,8 @@
+import { GenericFunction } from '../function';
 export declare type CheckedTargetEvent = TargetEvent<{
     checked: boolean;
 }>;
+export declare type EventHandler<TEvent> = GenericFunction<[TEvent]>;
 export declare type FilesTargetEvent = TargetEvent<{
     files: FileList | null;
 }>;
