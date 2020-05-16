@@ -15,3 +15,4 @@ promise/
 promise.mjs
 string/
 string.mjs
+!src/**
