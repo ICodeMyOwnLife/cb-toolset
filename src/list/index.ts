@@ -41,6 +41,8 @@ export const isArrayLike = (u: any): u is ArrayLike<any> =>
 export const last = <TList extends List>(list: TList): Last<TList> =>
   list[list.length - 1];
 
+export const tuple = <TArgs extends any[]>(...args: TArgs) => args;
+
 export const union = <TItem>(...lists: Iterable<TItem>[]) => [
   ...new Set(
     Array.prototype.concat.apply<TItem[], Iterable<TItem>[], TItem[]>(

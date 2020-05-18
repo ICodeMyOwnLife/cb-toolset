@@ -2,7 +2,7 @@
 import { promises } from 'fs';
 import typescript from 'rollup-plugin-typescript2';
 import cleanup from 'rollup-plugin-cleanup';
-import filesize from 'rollup-plugin-filesize';
+import filesize from 'cb-rollup-plugin-filesize';
 import del from 'rollup-plugin-delete';
 import pkg from '../package.json';
 const inputFilename = (entryName) => `src/${entryName}/index.ts`;
