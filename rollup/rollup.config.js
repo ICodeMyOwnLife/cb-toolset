@@ -51,7 +51,7 @@ const options = async () => {
     const ignores = ['node_modules', ...files, '!src/**'];
     pkg.files = files;
     await Promise.all([
-        promises.writeFile('package.json', JSON.stringify(pkg, null, 2)),
+        promises.writeFile('package.json', `${JSON.stringify(pkg, null, 2)}\n`),
         promises.writeFile('.gitignore', `${ignores.join('\n')}\n`),
     ]);
     return [esOptions];
