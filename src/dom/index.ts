@@ -28,6 +28,12 @@ export const getComputedStyle = (element: Element, styleName: string) =>
     ?.getComputedStyle(element, null)
     .getPropertyValue(styleName);
 
+export const getParentWindow = (): WindowProxy | null => {
+  if (!isBrowser()) return null;
+  if (window.parent && window.parent !== window) return window.parent;
+  return window.opener;
+};
+
 /**
  * @see https://stackoverflow.com/a/35385518/11450300
  */
