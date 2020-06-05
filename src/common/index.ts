@@ -24,5 +24,7 @@ export const isNumber = (u: any): u is number => typeof u === 'number';
 export const isSymbol = (u: any): u is symbol => typeof u === 'symbol';
 
 export const warnIfMissingCases = (o: never) => {
-  console.warn(unexpectedErrorMessage(o));
+  if (process.env.NODE_ENV !== 'production')
+    console.warn(unexpectedErrorMessage(o));
+  return undefined as never;
 };
