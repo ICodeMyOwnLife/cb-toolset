@@ -1,3 +1,10 @@
+# [0.6.0](https://github.com/ICodeMyOwnLife/cb-toolset/compare/0.5.0...0.6.0) (2020-06-09)
+
+
+### Features
+
+* add callable-object ([4927e96](https://github.com/ICodeMyOwnLife/cb-toolset/commit/4927e96fb5cf5915c12749642f3b39c40b96bc0f))
+
 # [0.5.0](https://github.com/ICodeMyOwnLife/cb-toolset/compare/0.4.0...0.5.0) (2020-06-09)
 
 
