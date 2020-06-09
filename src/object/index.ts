@@ -34,6 +34,17 @@ export const isObject = (u: any): u is object =>
 export const isPlainObject = (u: any): u is {} =>
   isObject(u) && u.constructor === Object;
 
+export const mapObject = <TObject extends Record<string | number, any>, TValue>(
+  o: TObject,
+  map: (value: ValueOf<TObject>, key: keyof TObject, index: number) => TValue,
+) =>
+  Object.fromEntries(
+    Object.entries(o).map(([key, value], index) => [
+      key,
+      map(value, key, index),
+    ]),
+  ) as Record<keyof TObject, TValue>;
+
 export const omitFrom = <TObject, TKey extends keyof TObject>(
   o: TObject,
   ...keys: TKey[]
