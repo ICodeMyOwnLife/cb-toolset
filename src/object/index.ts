@@ -1,6 +1,15 @@
+import { GeneralFunction } from '../function';
 import { ValueOf, PickFrom, OmitFrom, CreateRecordOf } from './types';
 
 export * from './types';
+
+export const callableObject = <
+  TCallable extends GeneralFunction,
+  TObject extends Record<PropertyKey, any>
+>(
+  callable: TCallable,
+  object: TObject,
+) => Object.assign(callable, object);
 
 export const createUniqueObject = () => Object.create(null);
 
@@ -21,29 +30,36 @@ export const filerNullValue = <TObject>(o: TObject) =>
  * Reference: https://fettblog.eu/typescript-hasownproperty/
  */
 export const hasOwnProperty = <
-  TObject extends object,
+  TObject extends Record<PropertyKey, unknown>,
   TProp extends PropertyKey
 >(
   o: TObject,
   prop: TProp,
 ): o is TObject & Record<TProp, unknown> => !!o?.hasOwnProperty(prop);
 
-export const isObject = (u: any): u is object =>
+export const isObject = (u: any): u is Record<PropertyKey, unknown> =>
   typeof u === 'object' && u !== null;
 
-export const isPlainObject = (u: any): u is {} =>
+export const isPlainObject = (u: any): u is Record<PropertyKey, unknown> =>
   isObject(u) && u.constructor === Object;
 
-export const mapObject = <TObject extends Record<string | number, any>, TValue>(
-  o: TObject,
-  map: (value: ValueOf<TObject>, key: keyof TObject, index: number) => TValue,
+export const mapObject = <
+  TKey extends string | number,
+  TValue,
+  TMappedValue,
+  TMappedKey extends string | number = TKey
+>(
+  o: Record<TKey, TValue>,
+  mapValue: (value: TValue, key: TKey, index: number) => TMappedValue,
+  mapKey: (key: TKey, value: TValue, index: number) => TMappedKey = key =>
+    (key as unknown) as TMappedKey,
 ) =>
   Object.fromEntries(
-    Object.entries(o).map(([key, value], index) => [
-      key,
-      map(value, key, index),
+    Object.entries<TValue>(o).map(([key, value], index) => [
+      mapKey(key as TKey, value, index),
+      mapValue(value, key as TKey, index),
     ]),
-  ) as Record<keyof TObject, TValue>;
+  ) as Record<TMappedKey, TMappedValue>;
 
 export const omitFrom = <TObject, TKey extends keyof TObject>(
   o: TObject,

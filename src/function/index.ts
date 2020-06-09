@@ -1,4 +1,4 @@
-import { ValueFactory } from './types';
+import { ValueFactory, GeneralFunction } from './types';
 
 export { default as audit } from './audit';
 export { default as debounce, DebounceOptions } from './debounce';
@@ -11,6 +11,7 @@ export const getValueFromFactory = <TValue>(
   factoryOrValue: ValueFactory<TValue>,
 ) => (isFunction(factoryOrValue) ? factoryOrValue() : factoryOrValue);
 
-export const isFunction = (u: unknown): u is Function => u instanceof Function;
+export const isFunction = (u: unknown): u is GeneralFunction =>
+  u instanceof Function;
 
 export const noop = () => undefined;

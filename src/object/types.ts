@@ -23,9 +23,9 @@ export type EmptyObject = { [key in string | number]: never };
 /**
  * @see https://github.com/react-hook-form/react-hook-form/blob/master/src/types.ts
  */
-export type IsFlatObject<T extends Record<string, unknown>> = Extract<
+export type IsFlatObject<T extends Record<PropertyKey, unknown>> = Extract<
   T[keyof T],
-  unknown[] | Record<string, unknown>
+  unknown[] | Record<PropertyKey, unknown>
 > extends never
   ? true
   : false;

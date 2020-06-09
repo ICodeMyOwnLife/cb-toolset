@@ -6,10 +6,10 @@ export const createURLSearchObject = <TSearchObject>(
   ...init: ConstructorParameters<typeof URLSearchParams>
 ) => Object.fromEntries(new URLSearchParams(...init) as any) as TSearchObject;
 
-export const createURLSearchParams = (searchObject: object) =>
-  new URLSearchParams(searchObject as Record<string, any>);
+export const createURLSearchParams = (searchObject: Record<string, string>) =>
+  new URLSearchParams(searchObject);
 
-export const createURLSearchString = (searchObject: object) =>
+export const createURLSearchString = (searchObject: Record<string, string>) =>
   createURLSearchParams(searchObject).toString();
 
 /**
