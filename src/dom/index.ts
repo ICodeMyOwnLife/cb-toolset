@@ -1,5 +1,6 @@
 import { Nullable } from '../common';
 
+export { default as CustomEventService } from './CustomEventService';
 export * from './types';
 
 export const createURLSearchObject = <TSearchObject>(
