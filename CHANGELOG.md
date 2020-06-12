@@ -1,3 +1,10 @@
+# [0.7.0](https://github.com/ICodeMyOwnLife/cb-toolset/compare/0.6.0...0.7.0) (2020-06-12)
+
+
+### Features
+
+* add custom-event-service ([02a8414](https://github.com/ICodeMyOwnLife/cb-toolset/commit/02a84142a559f8554b2fbcdeb5d74b0f25a3b1b5))
+
 # [0.6.0](https://github.com/ICodeMyOwnLife/cb-toolset/compare/0.5.0...0.6.0) (2020-06-09)
 
 
