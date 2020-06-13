@@ -1,6 +1,6 @@
 import { EventHandler } from './types';
 
-export default class CustomEventService<TEventDetail> {
+export default class WindowEventService<TEventDetail> {
   constructor(private eventType: string) {}
 
   dispatch = (detail: TEventDetail) => {
