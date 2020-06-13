@@ -1,3 +1,5 @@
+## [0.7.1](https://github.com/ICodeMyOwnLife/cb-toolset/compare/0.7.0...0.7.1) (2020-06-13)
+
 # [0.7.0](https://github.com/ICodeMyOwnLife/cb-toolset/compare/0.6.0...0.7.0) (2020-06-12)
 
 
