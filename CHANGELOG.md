@@ -1,3 +1,10 @@
+# [0.8.0](https://github.com/ICodeMyOwnLife/cb-toolset/compare/0.7.1...0.8.0) (2020-06-21)
+
+
+### Features
+
+* add uuid ([b24ef00](https://github.com/ICodeMyOwnLife/cb-toolset/commit/b24ef0007a4834ce6fb5b79e8b96593fe29baed5))
+
 ## [0.7.1](https://github.com/ICodeMyOwnLife/cb-toolset/compare/0.7.0...0.7.1) (2020-06-13)
 
 # [0.7.0](https://github.com/ICodeMyOwnLife/cb-toolset/compare/0.6.0...0.7.0) (2020-06-12)
