@@ -37,3 +37,13 @@ export const toLowerCase = createTransform(' ', w => w.toLowerCase());
 export const toTitleCase = createTransform(' ', capitalizeWord);
 
 export const toUpperCase = createTransform(' ', w => w.toUpperCase());
+
+/**
+ * @see https://abhishekdutta.org/blog/standalone_uuid_generator_in_javascript.html
+ */
+export const uuid = () => {
+  const url = URL.createObjectURL(new Blob());
+  const id = url.substr(url.lastIndexOf('/') + 1);
+  URL.revokeObjectURL(url);
+  return id;
+};
