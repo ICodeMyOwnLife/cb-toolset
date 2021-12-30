@@ -122,7 +122,7 @@ export const previousNodeSiblings = (node: Node) => {
 const getSiblingRecursive = <TCurrent, TSibling extends TCurrent>(
   siblings: TSibling[],
   currentItem: TCurrent,
-  getSibling: (currentItem: TCurrent) => Nullable<TSibling>,
+  getSibling: (curItem: TCurrent) => Nullable<TSibling>,
 ) => {
   const sibling = getSibling(currentItem);
   if (sibling) {

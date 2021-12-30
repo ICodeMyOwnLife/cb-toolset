@@ -32,6 +32,33 @@ export type IsFlatObject<T extends Record<PropertyKey, unknown>> = Extract<
 
 export type OmitFrom<TObject, TKey extends keyof TObject> = Omit<TObject, TKey>;
 
-export type PickFrom<TObject, TKey extends keyof TObject> = Pick<TObject, TKey>;
-
 export type ValueOf<T> = T[keyof T];
+
+export type LooseValueOf<T, K> = T[K & keyof T];
+export type LooseValueOf2<T, K1, K2> = LooseValueOf<LooseValueOf<T, K1>, K2>;
+export type LooseValueOf3<T, K1, K2, K3> = LooseValueOf2<
+  LooseValueOf<T, K1>,
+  K2,
+  K3
+>;
+export type LooseValueOf4<T, K1, K2, K3, K4> = LooseValueOf3<
+  LooseValueOf<T, K1>,
+  K2,
+  K3,
+  K4
+>;
+export type LooseValueOf5<T, K1, K2, K3, K4, K5> = LooseValueOf4<
+  LooseValueOf<T, K1>,
+  K2,
+  K3,
+  K4,
+  K5
+>;
+export type LooseValueOf6<T, K1, K2, K3, K4, K5, K6> = LooseValueOf5<
+  LooseValueOf<T, K1>,
+  K2,
+  K3,
+  K4,
+  K5,
+  K6
+>;

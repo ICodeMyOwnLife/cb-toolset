@@ -16,7 +16,7 @@ export const filter = <TItem, TSpecific extends TItem>(
   filterFunction: (
     item: TItem,
     index: number,
-    list: List<TItem>,
+    itemList: List<TItem>,
   ) => item is TSpecific,
 ) => list.filter(filterFunction) as List<TSpecific>;
 

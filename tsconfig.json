@@ -1,28 +1,14 @@
 {
+  "extends": "./tsconfig.base",
   "compilerOptions": {
-    "target": "ES2018",
-    "module": "ESNext",
-    "lib": ["DOM", "ES2020"],
+    "target": "ESNext",
+    "lib": ["DOM", "ESNext"],
     "declaration": true,
     "sourceMap": true,
     "outDir": ".",
     "noEmit": true,
-    "downlevelIteration": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
+    "downlevelIteration": true
   },
-  "include": ["src/"],
-  "exclude": ["src/**/*.test.ts", "rollup/"]
+  "include": ["src"],
+  "exclude": ["src/**/*.test.ts", "configs"]
 }

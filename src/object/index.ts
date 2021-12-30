@@ -1,11 +1,11 @@
 import { GeneralFunction } from '../function';
-import { ValueOf, PickFrom, OmitFrom, CreateRecordOf } from './types';
+import { ValueOf, OmitFrom, CreateRecordOf } from './types';
 
 export * from './types';
 
 export const callableObject = <
   TCallable extends GeneralFunction,
-  TObject extends Record<PropertyKey, any>
+  TObject extends Record<PropertyKey, any>,
 >(
   callable: TCallable,
   object: TObject,
@@ -23,7 +23,7 @@ export const filterObject = <TObject, TResult = Partial<TObject>>(
     ),
   ) as TResult;
 
-export const filerNullValue = <TObject>(o: TObject) =>
+export const filterNullValue = <TObject>(o: TObject) =>
   filterObject(o, value => value !== null && value !== undefined);
 
 /**
@@ -31,10 +31,11 @@ export const filerNullValue = <TObject>(o: TObject) =>
  */
 export const hasOwnProperty = <
   TObject extends Record<PropertyKey, unknown>,
-  TProp extends PropertyKey
+  TProp extends PropertyKey,
 >(
   o: TObject,
   prop: TProp,
+  // eslint-disable-next-line no-prototype-builtins
 ): o is TObject & Record<TProp, unknown> => !!o?.hasOwnProperty(prop);
 
 export const isObject = (u: any): u is Record<PropertyKey, unknown> =>
@@ -47,12 +48,12 @@ export const mapObject = <
   TKey extends string | number,
   TValue,
   TMappedValue,
-  TMappedKey extends string | number = TKey
+  TMappedKey extends string | number = TKey,
 >(
   o: Record<TKey, TValue>,
   mapValue: (value: TValue, key: TKey, index: number) => TMappedValue,
   mapKey: (key: TKey, value: TValue, index: number) => TMappedKey = key =>
-    (key as unknown) as TMappedKey,
+    key as unknown as TMappedKey,
 ) =>
   Object.fromEntries(
     Object.entries<TValue>(o).map(([key, value], index) => [
@@ -74,11 +75,14 @@ export const pickFrom = <TObject, TKey extends keyof TObject>(
   o: TObject,
   ...keys: TKey[]
 ) =>
-  filterObject<TObject, PickFrom<TObject, TKey>>(o, (_, key) =>
+  filterObject<TObject, Pick<TObject, TKey>>(o, (_, key) =>
     keys.includes(key as any),
   );
 
-export const recordCreator = <TValue>(): CreateRecordOf<TValue> => a => a;
+export const createRecordOf =
+  <TValue>(): CreateRecordOf<TValue> =>
+  a =>
+    a;
 
 export const typeOf = (u: any) => {
   const rawType = typeof u;

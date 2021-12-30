@@ -5,7 +5,7 @@ import {
 
 const debounce: RateLimitFunctionWithOptions<DebounceOptions> = <
   TArgs extends any[],
-  TReturn
+  TReturn,
 >(
   func: (...args: TArgs) => TReturn,
   wait: number,

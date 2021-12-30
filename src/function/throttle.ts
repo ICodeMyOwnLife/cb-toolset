@@ -5,7 +5,7 @@ import {
 
 const throttle: RateLimitFunctionWithOptions<ThrottleOptions> = <
   TArgs extends any[],
-  TReturn
+  TReturn,
 >(
   func: (...args: TArgs) => TReturn,
   wait: number,
